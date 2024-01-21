@@ -1,0 +1,17 @@
+.wy-nav-content {
+	max-width: 100%;
+}
+
+.rst-content {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.rst-versions {
+	display: none;
+}
+
+.rst-content code {
+	border-radius: 5px;
+}
