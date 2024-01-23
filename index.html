@@ -44,6 +44,11 @@
                 <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">UE4SS Info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="ue4ss/features/">Features</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Lua Modding</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="lua/setup/">Environment Setup</a>
@@ -79,8 +84,6 @@
               
                 <h1 id="miabsfd-ue4ss-guide">MiABSFD UE4SS Guide</h1>
 <p>This is a guide on how to use <strong>UE4SS</strong> to mod MiABSFD.</p>
-<p>See the <a href="https://github.com/UE4SS-RE/RE-UE4SS">UE4SS</a> repository for its full features. One primary feature of using UE4SS is it allows you to hook into the game itself and inject code, rather than repacking the game and applying .pak patches, which might lead to incompatibility when using multiple .pak mods.</p>
-<p>Also even without mods, UE4SS just has great features like dumping objects and headers, a live object viewer, and in-game command-line enabling.</p>
 <h2 id="requirements">Requirements</h2>
 <ol>
 <li>The game itself</li>
@@ -90,21 +93,19 @@
 <p><em>UE4SS is capable of modding via not only Lua and Blueprint, but also C++, but I do not have experience modding with C++.</em></p>
 <h2 id="installation">Installation</h2>
 <ol>
-<li>Download <a href="https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental">UE4SS Experimental Release v2.5.2-439</a> (<code>UE4SS_v2.5.2-439-g3cea237.zip</code>).</li>
+<li>Download <a href="https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental">UE4SS Experimental Release v2.5.2-570</a> (<code>UE4SS_v2.5.2-570-g37e727b.zip</code>).</li>
 <li>Make a backup of the game's <em>executable folder</em> (<code>\steamapps\common\MadeInAbyss-BSFD\MadeInAbyss-BSFD\Binaries\Win64</code>). This is so that you can revert the game back to a clean slate in case something happens.</li>
-<li>Extract <code>UE4SS_v2.5.2-439-g3cea237.zip</code> into the <em>executable folder</em>.</li>
-<li>Grab the latest release of this repository, or just download/clone.</li>
-<li>In your copy of the repository, paste all the files inside the top folder into the <em>executable folder</em>.</li>
+<li>Extract <code>UE4SS_v2.5.2-570-g37e727b.zip</code> into the <em>executable folder</em>.</li>
 </ol>
 <p>UE4SS should now be installed whenever you run the game.</p>
 <p>To uninstall, revert the <em>executable folder</em> back to its clean slate.</p>
+<p>See the sidebar for more info on UE4SS and its features.</p>
 <h2 id="guides">Guides</h2>
 <p>Once you've installed UE4SS, you can check out the guides on the sidebar on the left.</p>
 <p>While they are still WIP, if you're an advanced enough user, installation should be enough, and you can start experimenting by looking at guides from the <a href="https://docs.ue4ss.com/">UE4SS docs</a> and their Discord server (also linked in the docs).</p>
 <h2 id="example-mods">Example Mods</h2>
 <ol>
-<li><a href="https://github.com/seekerted/AbyssDeep">QOL Mod by me</a> (self-plug, WIP)</li>
-<li><a href="https://github.com/seekerted/MiABSFD-FreeMobilityMod">Free Mobility Mod by me</a> (self-plug)</li>
+<li><a href="https://github.com/seekerted">My mods (self-plug)</a></li>
 </ol>
               
             </div>
@@ -131,7 +132,7 @@
     
     
     
-      <span><a href="lua/setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="ue4ss/features/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
@@ -151,5 +152,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-01-21 05:49:59.543428+00:00
+Build Date UTC : 2024-01-23 10:48:36.040663+00:00
 -->
