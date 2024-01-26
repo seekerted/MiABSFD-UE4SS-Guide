@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Nexus Mods and Vortex - MiABSFD UE4SS Guide</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Nexus Mods and Vortex";
+        var mkdocs_page_input_path = "nexus.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MiABSFD UE4SS Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Nexus Mods and Vortex</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UE4SS Info</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ue4ss/features/">Features</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Lua Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../lua/setup/">Environment Setup</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Blueprint Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../bp/setup/">Environment Setup</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MiABSFD UE4SS Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Nexus Mods and Vortex</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="nexus-mods-and-vortex">Nexus Mods and Vortex</h1>
+<p>In an effort to make it easier to look for and install mods, I've started uploading mods to <a href="https://www.nexusmods.com/madeinabyssbinarystarfallingintodarkness">Nexus Mods</a> and also submitted a game extension to create support using <a href="https://www.nexusmods.com/site/mods/771">Vortex</a>, their mod manager.</p>
+<h2 id="installing-vortex-and-adding-miabsfd-support">Installing Vortex and Adding MiABSFD Support</h2>
+<p>At the time this was written, Vortex hasn't added my game extensions as one if its defaults yet, so you have to manually add it to Vortex.</p>
+<ol>
+<li>Download <a href="https://www.nexusmods.com/about/vortex/">Vortex</a></li>
+<li>Download the <a href="https://www.nexusmods.com/site/mods/771">support extension</a> <strong>manually</strong>.</li>
+<li>In Vortex &gt; Extensions, drag the downloaded zip file of the extension onto the Drop File(s).</li>
+<li>Restart Vortex</li>
+<li>In Vortex &gt; Games, search for Made in Abyss and click Manage on it. Agree to admin prompts if needed.</li>
+</ol>
+<p>You're done!</p>
+<h2 id="installing-mods">Installing Mods</h2>
+<p>Once you start managing Made in Abyss you can head to Vortex &gt; Mods and drag / drop any mod .zip files to handle them.</p>
+<ol>
+<li>Once you've finalized your list of mods, just before you run the game, hit <strong>Deploy Mods</strong>. The way Vortex works is it keeps the game folder untouched, so that the files can be removed anytime. Deploying mods is where it creates symlinks to the game folder to actually add the files onto the game folder.</li>
+<li>If on the upper-right hand of the screen, it says "Deployment requires elevation," hit <strong>Elevate</strong>. This is for the creation of those symlinks.</li>
+<li>You can start playing the game by clicking on the play button on the upper-left.</li>
+</ol>
+<h2 id="creating-mods-that-are-compatible-with-vortex">Creating Mods that are compatible with Vortex</h2>
+<p>The game extension supports three kinds of mods: basic pak mods, UE4SS Lua mods, and UE4ss Blueprint mods. <strong>All mods must be inside a .zip file.</strong></p>
+<p>If these are followed, your mods should be handled by the game extension just fine.</p>
+<h3 id="pak-mods">.pak mods</h3>
+<p>Simply put your .pak files inside the .zip file, in the root.</p>
+<h3 id="ue4ss-lua-mods">UE4SS Lua Mods</h3>
+<p>Ensure that the .zip file contains at least the following:</p>
+<pre><code class="language-text">Mods/modname/Scripts/main.lua
+Mods/modname/enabled.txt
+</code></pre>
+<h3 id="ue4ss-blueprint-mods">UE4SS Blueprint Mods</h3>
+<p>Similar to the .pak mods, except that it must be placed inside a LogicMods folder.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ue4ss/features/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
