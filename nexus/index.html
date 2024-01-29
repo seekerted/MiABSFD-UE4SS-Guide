@@ -87,29 +87,14 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="nexus-mods-and-vortex">Nexus Mods and Vortex</h1>
-<p><em>(This guide is mirrored <a href="https://www.nexusmods.com/site/mods/771">here</a>.)</em></p>
-<p>In an effort to make it easier to look for and install mods, I've started uploading mods to <a href="https://www.nexusmods.com/madeinabyssbinarystarfallingintodarkness">Nexus Mods</a> and also submitted a game extension to create support using <a href="https://www.nexusmods.com/site/mods/771">Vortex</a>, their mod manager.</p>
+<p>In an effort to make it easier to look for and install mods, I've started uploading mods to <a href="https://www.nexusmods.com/madeinabyssbinarystarfallingintodarkness">Nexus Mods</a> and also submitted a game extension to support the game using <a href="https://www.nexusmods.com/site/mods/771">Vortex</a>, their mod manager.</p>
 <h2 id="installing-vortex-and-adding-miabsfd-support">Installing Vortex and Adding MiABSFD Support</h2>
-<p>At the time this was written, Vortex hasn't added my game extensions as one if its defaults yet, so you have to manually add it to Vortex.</p>
-<ol>
-<li>Download <a href="https://www.nexusmods.com/about/vortex/">Vortex</a></li>
-<li>Download the <a href="https://www.nexusmods.com/site/mods/771">support extension</a> <strong>manually</strong>.</li>
-<li>In Vortex &gt; Extensions, drag the downloaded zip file of the extension onto the Drop File(s).</li>
-<li>Restart Vortex</li>
-<li>In Vortex &gt; Games, search for Made in Abyss and click Manage on it. Agree to admin prompts if needed.</li>
-</ol>
-<p>You're done!</p>
-<h2 id="installing-mods-and-playing-the-game">Installing Mods and Playing the game.</h2>
-<p>Once you start managing Made in Abyss you can head to Vortex &gt; Mods and drag / drop any mod .zip files to handle them.</p>
-<ol>
-<li>Once you've finalized your list of mods, <strong>just before you run the game, hit Deploy Mods</strong>. The way Vortex works is it keeps the game folder untouched, so that the files can be removed anytime. Deploying mods is where it creates symlinks to the game folder to actually add the files onto the game folder.</li>
-<li>If on the upper-right hand of the screen, it says <strong>"Deployment requires elevation," hit Elevate</strong>. This is for the creation of those symlinks.</li>
-<li>You can start playing the game by clicking on the play button on the upper-left.</li>
-</ol>
-<h2 id="creating-mods-that-are-compatible-with-vortex">Creating Mods that are compatible with Vortex</h2>
+<p>Installation instructions using Nexus Mods and Vortex here: <a href="https://www.nexusmods.com/site/mods/771">https://www.nexusmods.com/site/mods/771</a></p>
+<p>More manual / advanced instructions here: <a href="https://github.com/seekerted/AbyssVortex">https://github.com/seekerted/AbyssVortex</a></p>
+<h2 id="creating-mods-that-are-compatible-with-vortex-and-the-game-extension">Creating mods that are compatible with Vortex and the game extension</h2>
 <p>The game extension supports three kinds of mods: basic pak mods, UE4SS Lua mods, and UE4SS Blueprint mods. <strong>All mods must be inside a .zip file.</strong></p>
 <p>If these are followed, your mods should be handled by the game extension just fine.</p>
-<p>Note: Only these types of files will be deployed: .pak, .txt, .dll, .ini, and .lua.</p>
+<p>Note: Only these types of files will be extracted from the mod zip: .pak, .txt, .dll, .ini, and .lua.</p>
 <h3 id="pak-mods">.pak mods</h3>
 <p>Simply put your .pak files inside the .zip file, in the root.</p>
 <h3 id="ue4ss-lua-mods">UE4SS Lua Mods</h3>
