@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Ted the Seeker" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Environment Setup - MiABSFD UE4SS Guide</title>
+    <title>Log Called Functions - MiABSFD UE4SS Guide</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Environment Setup";
-        var mkdocs_page_input_path = "bp\\setup.md";
+        var mkdocs_page_name = "Log Called Functions";
+        var mkdocs_page_input_path = "general\\functions.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -59,13 +59,13 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Blueprint Modding</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Environment Setup</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bp/setup/">Environment Setup</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">General Stuff</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../general/functions/">Log Called Functions</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Log Called Functions</a>
                   </li>
               </ul>
       </div>
@@ -82,8 +82,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Blueprint Modding</li>
-      <li class="breadcrumb-item active">Environment Setup</li>
+          <li class="breadcrumb-item">General Stuff</li>
+      <li class="breadcrumb-item active">Log Called Functions</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -92,53 +92,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="environment-setup-for-blueprint-modding">Environment Setup for Blueprint Modding</h1>
-<p>Ensure that you have installed UE4SS on to MiABSFD. See the main page for more information.</p>
-<p><strong>Experimental</strong>. I'm still currently figuring out how to do this. The steps currently laid out here is what I've gathered after trial and error, but they might not be perfect.</p>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>Unreal Engine 4.25.4</li>
-<li>Visual Studio</li>
-</ul>
+                <h1 id="log-called-functions">Log Called Functions</h1>
+<p>This will allow you to see what functions are being called in real time.</p>
+<p><img alt="Screenshot" src="../function-01.png" /></p>
+<p>Note: In my experience, unfortunately it doesn't log <em>all</em> functions, but still it's a good help. If you don't trust the output of the logs then doing the good ol' <code>RegisterHook</code> on the function and then printing should do the trick.</p>
 <h2 id="setup">Setup</h2>
 <ol>
-<li>Launch Unreal Engine 4.25.4</li>
-<li>Create a project with the following settings:<ul>
-<li>Games Category</li>
-<li>Blank</li>
-<li>C++, No Starter Content (other settings don't matter)</li>
-<li>Name: <code>MadeInAbyss</code></li>
-</ul>
-</li>
-<li>Change the following settings:<ul>
-<li>Edit &gt; Editor Preferences &gt; Experimental &gt; Allow ChunkID Assignments (Tick)</li>
-<li>Edit &gt; Project Settings &gt; Packaging &gt; Generate Chunks (Tick)</li>
-<li>File &gt; Package Project &gt; Build Configuration &gt; Shipping</li>
-</ul>
-</li>
-<li>Inside the Content Browser, create the following folder: <code>Mods/&lt;mod name&gt;_P</code></li>
-<li>Inside <code>Mods/&lt;mod name&gt;_P</code>, create a Blueprint Class &gt; Actor named <code>ModActor</code>.</li>
-<li>Create an event <code>Event BeginPlay</code> onto the blueprint. (It is inside this <code>Event BeginPlay</code> of <code>ModActor</code> that gets called by UE4SS as soon as it gets loaded onto the game.)</li>
-<li>Close Unreal Engine.</li>
-<li>Go to your project's folder. Rename <code>MadeInAbyss.uproject</code> to <code>MadeInAbyss-BSFD.uproject</code></li>
-<li>Delete <code>MadeInAbyss.sln</code></li>
-<li>Right-click on <code>MadeInAbyss-BSFD.uproject &gt; Generate Visual Studio project files</code></li>
-<li>Open <code>MadeInAbyss-BSFD.sln</code> using Visual Studio</li>
-<li>Rename <code>Game/MadeInAbyss-BSFD</code> to <code>Game/MadeInAbyss</code></li>
+<li>Get <a href="https://framedsc.com/GeneralGuides/universal_ue4_consoleunlocker.htm">Universal Unreal Engine 4 Unlocker (UUU)</a>. The latest version (3.0.21) should be fine.</li>
+<li>Get <a href="https://www.unknowncheats.me/forum/unreal-engine-4-a/570218-ue-multitool-class-inspector-sdk-dumper-fn-logger.html">UE Multitool</a>. You have to register to download files from this forum.</li>
+<li>Start the game.</li>
+<li>After starting the game, start UUU.</li>
+<li>Select the game (<code>MadeInAbyss-Win64-Shipping.exe</code>) as the process to inject to, and the UE Multitool dll (<code>void_unrealtool_[unknowncheats.me]_.dll</code>) as the DLL to inject.</li>
+<li>Hit <strong>Inject DLL</strong>. A command prompt will pop up, and UE Multitool will appear in-game.</li>
+<li>Within the window in-game, hit <strong>Find Engine</strong>. Three more fields and buttons will pop up. Also hit <strong>Find Names</strong>, <strong>Find Objects</strong>, and <strong>Find World</strong>. This will populate the fields with addresses. Hit <strong>Initialize</strong>.</li>
+<li>Go to the <strong>Functions</strong> tab.</li>
+<li>Change <em>Process Event Index</em> to 42.</li>
+<li>Click <strong>Find Address</strong>.</li>
+<li>Click <strong>Hook</strong>.</li>
+<li>Now you're done! The functions will appear on the <strong>FN Log</strong>.</li>
 </ol>
-<p>You should be okay. I think.</p>
-<h2 id="exporting-your-mod">Exporting your mod</h2>
-<ol>
-<li>To <strong>all</strong> files, right click, then <code>Asset Actions &gt; Assign to Chunk...</code></li>
-<li>Chose one number between 30 and 300, then set the chunk numbers to that. <strong>Ensure that this pak chunk number is not being used by another mod!</strong></li>
-<li><code>File &gt; Package Project &gt; Windows (64-bit)</code></li>
-<li>Wait for it to compile. It will take longer the first time, but much faster afterwards.</li>
-<li>The resulting paks will be available in <code>MadeInAbyss-BSFD/WindowsNoEditor/MadeInAbyss-BSFD/Content/Paks</code></li>
-<li>Search for the pak with the number that you chose. That contains your mod.</li>
-<li>Rename the pak file to <code>&lt;mod name&gt;_P.pak</code></li>
-</ol>
-<h2 id="installing-your-mod">Installing your mod</h2>
-<p>Insert the pak file onto <code>steamapps/common/MadeInAbyss-BSFD/MadeInAbyss-BSFD/Content/Paks/LogicMods</code>. Your mod should now be loaded by UE4SS when you run the game!</p>
               
             </div>
           </div><footer>
@@ -163,10 +135,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../lua/setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../bp/setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../../general/functions/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
